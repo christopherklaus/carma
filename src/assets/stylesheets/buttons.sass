@@ -1,0 +1,176 @@
+@mixin fancy-button($color: $green)
+  min-width: 20px
+  border: 1px solid #ddd
+  border-radius: 20px
+  padding: 3px
+  display: table
+  cursor: pointer
+  transition: all $transition ease-out
+  margin: 0 5px
+  .icon
+    transition: all $transition ease-in-out
+    background-color: $color
+    color: white
+    text-align: center
+    height: 26px
+    width: 26px
+    line-height: 26px
+    border-radius: 100%
+    border: 0
+    padding: 1px 0 0 0
+    display: inline-block
+  .text
+    max-width: 0
+    max-height: 0
+    display: inline-block
+    overflow: hidden
+    transition: all $transition ease-in-out, max-height 0s linear
+    color: white
+    margin: 0
+    transform: translateY(3px)
+  &:hover
+    background-color: $color
+    border-color: $color
+    box-shadow: none
+    outline: none
+    .text
+      max-width: 120px
+      max-height: calc(1rem)
+      margin: 0 10px
+    .icon
+      background-color: #fff
+      color: $color
+
+@mixin fancy-button-simple($color: $green, $hovercolor: $color)
+  display: inline-block
+  .icon
+    background-color: transparent
+    color: white
+    text-align: center
+    color: $color
+    border: 1px solid transparent
+    cursor: pointer
+    border-radius: 5px
+    transition: all .1s ease-out
+    display: inline-block
+    padding: 2px 7px
+    &:focus
+      box-shadow: none
+      outline: none
+    &:hover, &:focus
+      color: darken($hovercolor, 15)
+      background-color: rgb(250, 250, 250)
+      border: 1px solid rgb(230, 230, 230)
+
+.fancy-button
+  @include fancy-button
+
+.fancy-button-danger
+  @include fancy-button($red)
+
+.fancy-button-secondary
+  @include fancy-button($darkgrey)
+
+.fancy-button-simple
+  @include fancy-button-simple
+
+.fancy-button-simple-danger
+  @include fancy-button-simple($darkgrey, $red)
+
+.fancy-button-simple-secondary
+  @include fancy-button-simple($darkgrey)
+
+.clear-button
+  top: 0
+  width: 28px
+  height: 28px
+  cursor: pointer
+  transition: all .4s ease-out
+  &.collapsed
+    transform: rotate(-90deg)
+  &, &:hover
+    background: transparent
+    border: none
+    background-image: none !important
+  &:focus
+    box-shadow: none
+    outline: none
+
+// bootstrap override
+.btn-group
+  &.show
+    & > .btn-secondary
+      color: #24292e
+      background-color: rgb(245, 245, 245)
+.btn, .btn-primary
+  border-radius: 20px
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important
+  transition: all .2s ease-out
+  &.btn-secondary
+    &:active
+      color: rgb(245, 245, 245) !important
+  &, &:disabled
+    color: darken($darkgrey, 15)
+    background-color: rgb(250, 250, 250)
+    border: 1px solid rgb(220, 220, 220)
+  &:disabled
+    color: lighten($darkgrey, 20) !important
+  &:hover, &:active
+    background-color: rgb(245, 245, 245)
+    border-color: rgb(179, 179, 179)
+    color: #24292e
+  &:active
+    outline-width: 0
+    border-color: rgba(27,31,35,0.35)
+    box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15)
+  &:focus
+    outline-width: 0
+    box-shadow: none
+    background-color: rgb(245, 245, 245)
+    border-color: rgb(179, 179, 179)
+    color: #24292e
+  &.btn-success, &.btn-danger
+    color: #fff
+    border: none
+    box-shadow: 0 2px 9px rgba(134, 205, 55, .4)
+    background-color: rgb(134, 205, 55)
+    &:disabled
+      color: white !important
+    &:hover, &:active, &.active
+      color: #fff
+      background-color: darken(rgb(134, 205, 55), 5) !important
+    &.active
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .4)
+  &.btn-danger
+    border-color: #c72424
+    background-color: #da2828 !important
+    box-shadow: 0 2px 9px rgba(#da2828, .4) !important
+    &:hover, &:active
+      background-color: #cb2323 !important
+  &.btn-warning
+    color: white
+    background-color: #ffc107
+    border-color: #ffc107
+    &:hover, &:active
+      background-color: #e0a800 !important
+      border-color: #d39e00 !important
+  &.btn-outline-danger
+    color: #dc3545
+    background-color: transparent
+    background-image: none
+    border-color: #dc3545
+    &:hover, &:active
+      background-color: #dc3545
+      color: #fff
+
+.badge
+  border: 1px solid #ddd
+  display: inline-block
+  font-weight: 500
+  border-radius: 20px
+  padding: .25rem .5rem
+  color: #6c757d
+  background-color: $dirtywhite
+
+a.link-documentation
+  color: $darkgrey

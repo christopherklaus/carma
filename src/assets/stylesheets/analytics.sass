@@ -1,0 +1,52 @@
+.stat-wrapper
+  .es-value
+    font-family: 'Nunito', 'sans-serif'
+    font-weight: 500
+    text-align: center
+    font-size: 2em
+    line-height: 100px
+    color: $darkgrey
+    height: 100px
+    width: 100px
+    .unit
+      display: inline-block
+      margin-left: 5px
+      font-size: .6em
+
+.chart-wrapper
+  background-color: $dirtywhite
+  padding: 10px
+  border-radius: $border-radius
+  .chart-http-status
+    canvas
+      width: 300px !important
+      height: 100px !important
+
+.graph-wrapper
+  h6
+    margin-bottom: 16px
+
+.list-group
+  &.unit-overview
+    .list-group-item
+      border: none
+      &:nth-child(2)
+        border-bottom: 1px solid #ddd
+        padding-bottom: 1.3em
+        margin-bottom: .7em
+
+.insights-list  
+  .row
+    .value-text
+      font-size: 1.6em
+    .data-label
+      font-size: 1rem
+  .duration
+    width: 20%
+    .bar-wrapper
+      width: 100%
+    .response-time-bar
+      postion: absolute
+      height: 18px
+      background-color: #ddd
+      border-radius: 20px

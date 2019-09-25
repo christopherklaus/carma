@@ -1,0 +1,60 @@
+.app-header
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 1500
+  padding: 3px 0
+  height: $header-height
+  nav#project
+    .name-badge
+      color: $white
+    .dropdown
+      .dropdown-item
+        &.active
+          font-weight: 600
+          color: $black
+          background-color: transparent
+  .universal-create-dropdown
+    z-index: 2500
+    width: 300px !important
+  .universal-create
+    color: $darkgrey
+    font-size: 1.2em
+    z-index: 2500
+    text-shadow: 4px 3px 10px rgba(0, 0, 0, .1)
+    transition: all .3s ease-out
+    &:hover
+      color: $grey
+    &-dropdown
+      .dropdown-item.action-link
+        width: calc(100% - 0.5em)
+  .link-profile
+    z-index: 2500
+    .toggle-dark-mode
+      max-width: 0
+      display: inline-block
+      opacity: 0
+      transition: all .4s ease-out
+      color: $grey
+      &.active
+        &:before
+          font-weight: 900
+      &:before
+        content: "\f186"
+        font-family: 'Font Awesome 5 Pro'
+        font-weight: 500
+    .name
+      display: inline-block
+      color: $black
+      margin-right: 10px
+      font-size: 120%
+    img
+      border-radius: 100%
+      width: 32px
+      height: auto
+      border: 2px solid $white
+      box-shadow: $box-shadow-low
+    &:hover
+      .toggle-dark-mode
+        max-width: 20px
+        opacity: 1

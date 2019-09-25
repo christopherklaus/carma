@@ -1,0 +1,112 @@
+.app-sidebar
+  width: $sidebar-width
+  height: 100vh
+  // background-color: $white
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  z-index: 1000
+  text-align: left
+  padding: 30px
+  // box-shadow: 0 5px 20px rgba(0, 0, 0, .05)
+  .endpoint-name
+    white-space: nowrap
+    max-width: 40px
+    font-size: .9em
+    overflow: hidden
+    text-overflow: ellipsis
+  .wrapper
+    overflow-y: auto
+    height: calc(100vh - 520px)
+    padding-bottom: 30px
+    margin-left: 10px
+  nav
+    a
+      color: lighten($darkgrey, 5)
+      &:hover, &.active
+        color: lighten($darkgrey, 5) !important
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .06)
+      &:not(.add-endpoint)
+        opacity: .7
+        transition: opacity .2s ease-out
+        &:hover, &.active
+          opacity: 1
+        &.active
+          font-weight: 500
+    &#global
+      margin-left: 10px
+    &#main
+      a
+        padding: 6px 10px
+        margin-bottom: 5px
+        .fas, .far
+          display: inline-block
+          margin-right: 5px
+    &#project, &#main, &#resources, &#meta, &.endpoint-list
+      margin-top: 20px
+    &.endpoint-list
+      .sidebar-link
+        .fancy-button-simple-danger, .fancy-button-simple-secondary
+          opacity: 0
+          transition: opacity .4s ease-out
+          .icon
+            &:hover
+              background-color: #e1e1e1
+              border-color: #ccc
+        &:hover, &.active
+          .fancy-button-simple-danger, .fancy-button-simple-secondary
+            opacity: 1
+    &#main
+      .fancy-button-simple-secondary
+        button.icon
+          color: $grey
+    .link-headline
+      font-size: .8rem
+      font-weight: 300
+      color: lighten($darkgrey, 30)
+      margin-bottom: 1em
+      &:hover
+        .fa
+          color: $grey
+      .fa
+        transition: color .4s ease-out
+        color: #ccc
+    .name-wrapper
+      &:not(.endpoint-rest-json)
+        .endpoint-group-name, .endpoint-name
+          display: block !important
+          max-width: calc(#{$sidebar-width} - 64px) !important
+    & > a, .sidebar-link
+      display: block
+      padding: .45em 1px
+      font-weight: 400
+      color: lighten($darkgrey, 10)
+      transition: all .2s ease-out
+      border-radius: 15px
+      & > a
+        font-weight: 400
+        color: lighten($darkgrey, 5)
+      .endpoint-group-name
+        display: inline-block
+        max-width: calc(#{$sidebar-width} - 109px)
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        vertical-align: top
+      &:not(.no-hover):hover, &.active
+        color: black
+.endpoint-name
+  display: inline-block
+  text-transform: uppercase
+  font-weight: bold
+  &.get
+    color: cadetblue
+  &.post
+    color: #1767a5
+  &.put
+    color: #10ae62
+  &.patch
+    color: #d7af37
+  &.delete
+    color: #ab4d46

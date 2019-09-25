@@ -1,0 +1,76 @@
+@import './colors.sass'
+
+=onload-fadeIn($position, $duration)
+  $delay: calc(#{$position} * (#{$duration} / 2))
+  animation: hidden $delay, fadeInBack calc(#{$duration} * 2)
+  animation-delay: 0s, $delay
+
+.bounceInDown 
+  animation: bounceInDown .8s ease-out
+
+@keyframes fadeInBack
+  from
+    transform: scale(.98) rotateX(-10deg) translateZ(-20px)
+    opacity: 0
+  to
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes hidden
+  from, to
+    opacity: 0
+
+@keyframes sk-bounce
+  from, to
+    transform: scale(0.0)
+  50%
+    transform: scale(1.0)
+
+@keyframes fadeInMenu
+  from
+    transform: scale(.9) rotateX(-30deg) translateZ(-20px)
+    opacity: 0
+  to
+    transform: scale (1) rotateX(0deg) translateZ(0)
+    opacity: 1
+
+@keyframes fadeIn
+  from 
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes rotate
+  from
+    transform: rotate(-360deg)
+  to
+    transform: rotate(0)
+
+// imported from https://daneden.github.io/animate.css/
+
+@keyframes bounceInDown
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  0%
+    opacity: 0
+    -webkit-transform: translate3d(0, -3000px, 0)
+    transform: translate3d(0, -3000px, 0)
+
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(0, 25px, 0)
+    transform: translate3d(0, 25px, 0)
+
+  75%
+    -webkit-transform: translate3d(0, -10px, 0)
+    transform: translate3d(0, -10px, 0)
+
+  90%
+    -webkit-transform: translate3d(0, 5px, 0)
+    transform: translate3d(0, 5px, 0)
+
+  to
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)

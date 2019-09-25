@@ -1,0 +1,99 @@
+@import "./sidebar"
+@import "./header"
+@import "./lists"
+@import "./spinner"
+@import "./utilities"
+@import "./buttons"
+@import "./cards"
+@import "./global-alert"
+@import "./modal"
+@import "./checkbox"
+@import "./dragdrop"
+@import "./fonts"
+
+#app-main
+  margin-top: #{$header-height}
+  margin-left: #{$app-main-padding}
+  margin-right: $app-main-padding
+  margin-bottom: 0
+  padding: 1em
+  transition: margin-left .2s ease-out
+  &.has-sidebar
+    margin-left: #{$sidebar-width + $app-main-padding}
+    &.active-search
+      margin-left: #{$sidebar-width + $omni-search-width + $app-main-padding}
+
+#xapix-api-management-iframe
+  height: calc(100vh - #{$header-height + ($app-main-padding * 2) + 2px})
+  overflow: scroll
+  width: 100%
+  box-shadow: none
+  border: none
+
+// bootstrap override
+
+.dropdown-menu
+  border: none
+  z-index: 3000
+  margin-top: .5em
+  box-shadow: $box-shadow-high
+  max-height: 90vh
+  overflow-y: auto
+
+  a.color-red
+    &:hover
+      color: $red
+
+.alert-light
+  background-color: $lightgrey
+  a
+    color: $grey
+
+body
+  background-color: $background
+
+.list-group-item
+  padding: .75rem 1rem
+
+.alert
+  p:last-child
+    margin-bottom: 0
+
+h5, h6
+  color: $darkgrey
+
+h5
+  font-size: 1.4rem
+  font-weight: 300
+  margin-bottom: 0
+  &.no-transform
+    text-transform: none !important
+  & + h6
+    margin-top: 5px
+
+a
+  color: black
+  img
+    border: none
+  &:hover
+    text-decoration: none
+    color: $darkgrey
+    img
+      border: none
+  &.danger
+    &:hover
+      color: $red !important
+
+samp
+  overflow: auto
+  border-radius: $border-radius
+
+.btn-group
+  .dropdown-menu
+    box-shadow: $box-shadow-high
+
+.cursor-pointer
+  cursor: pointer
+
+.cursor-default
+  cursor: default

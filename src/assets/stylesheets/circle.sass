@@ -1,0 +1,27 @@
+@import './colors'
+
+$size: 12px
+$minus-half-size: calc((#{$size} / 2) * -1)
+
+@mixin connected-circle
+  width: $size
+  height: $size
+  border-radius: 100%
+  background-color: $green
+  position: absolute
+  top: 50%
+  margin-top: $minus-half-size
+  box-shadow: inset -3px 2px 3px rgba(0, 0, 0, .1)
+
+.connected-circle
+  &-wrapper
+    position: absolute
+    width: calc(#{$size} / 2)
+    height: $size
+    overflow: hidden
+    z-index: 800
+    top: calc(50% - (#{$size} / 2))
+    transform: translateX(-9px)
+  &-left
+    @include connected-circle
+    transform: translateX($minus-half-size)

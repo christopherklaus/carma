@@ -1,0 +1,124 @@
+@import './variables'
+@import './colors'
+
+$list-wrapper-padding: 10px
+$base-color: rgb(235, 235, 235)
+$border-color: darken($base-color, 10)
+
+li
+  list-style-type: none
+
+.list-wrapper
+  ul
+    list-style-type: none
+    padding: 0
+
+.leaf, .collection, .nest-parent
+  .name-wrapper
+    width: 100%
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap !important
+    & > .name
+      font-weight: 600
+      white-space: pre
+    .sample-value
+      width: 100%
+  &.leaf
+    .name-wrapper
+      width: calc(100% - 70px)
+
+
+.leaf, .dropzone
+  background-color: $white
+  border-radius: 10px
+  border: 1px solid $base-color
+  padding: 5px 8px
+  margin-bottom: 7px
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .02)
+  &[draggable="true"]
+    cursor: pointer
+    &:hover
+      background-color: darken($white, 2)
+
+.leaf, .collection
+  & > .justify-content-between > .name-wrapper
+    .name.collection-name
+      &:before
+        content: "\f022"
+        font-family: 'Font Awesome 5 Pro'
+        font-weight: 400
+        padding-right: 4px
+      &.collapsed:before
+        padding-right: 4px
+        font-weight: 900
+
+
+.nest-parent
+  & > .justify-content-between > .name-wrapper
+    .name:before
+      content: '\f07c'
+      font-family: 'Font Awesome 5 Pro'
+      font-weight: 900
+      padding-right: 3px
+    .name.collapsed:before
+      padding-right: 4px
+      content: '\f07b'
+
+.nest-parent, .collection, .branch
+  border-left: 3px solid #ddd
+  padding-left: 8px
+  margin: 4px 0
+  & + .leaf
+    margin-top: 10px
+  & > .justify-content-between
+    & > .name-wrapper
+      .name
+        cursor: pointer
+        display: block
+  & > ul
+    list-style-type: none
+    padding-left: 0
+    margin-top: 10px
+
+li .nest-parent, li .collection
+  margin: 20px 0
+
+.collection
+  border-left-color: #aaa
+.dropzone
+  border-style: dashed
+  box-shadow: none
+  .name-wrapper
+    color: #ccc
+    .name:before
+      content: '\f063'
+      font-family: 'Font Awesome 5 Pro'
+      font-weight: 500
+      padding-right: 5px
+  &.dragTarget
+    background-color: rgba($green, .2)
+    border-color: $green
+    border-style: solid
+    box-shadow: 0 0 5px rgba($green, .4)
+    transition: all .2s ease-out
+    .name-wrapper
+      transition: all .2s ease-out
+      color: $green
+
+.collection-preview, .nest-preview
+  font-weight: normal
+.collection-preview
+  &:before
+    content: "[ "
+  &:after
+    content: "]"
+.nest-preview
+  &:before
+    content: "{ "
+  &:after
+    content: " }"
+
+.pipeline-endpoint-wrapper
+  .name-wrapper
+    width: calc(100% - 25%)

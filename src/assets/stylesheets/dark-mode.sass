@@ -1,0 +1,103 @@
+
+$darkwhite: #fcfcfc
+$darkgreen: #32975C
+$green: #56DB8D
+$lightgrey: #444
+$dirtywhite: #222
+$grey: #999
+$red: #EA6156
+$darkgrey: #ddd
+$bluegreen: #26D0A4
+$lightblack: rgba(0, 0, 0, 0.125)
+$white: #333
+
+$text: $darkgrey
+
+body
+  &.dark
+    background-color: $white
+    color: $text
+
+    a, pre
+      color: $text !important
+
+    .card, .list-group-item, .list-group-item-action, .dropdown-menu
+      background-color: $white
+      color: $text
+
+    .dropdown-menu
+      a.dropdown-item
+        &:hover
+          background-color: $dirtywhite
+
+    .list-group-item, .list-group-item-action
+      &:hover
+        background-color: $dirtywhite
+        color: $text
+
+    .app-header .link-profile .name
+      color: $text
+
+    .btn-group.show > .btn-secondary
+      color: $text
+    
+    .data-source-list
+      .data-source:hover
+        background-color: $dirtywhite
+
+    .btn, .badge
+      color: $text
+      background-color: #eff3f6
+      border-color: $dirtywhite
+      background-color: $lightgrey !important
+      &-success
+        background-color: #114823 !important
+        border-color: #0b3a1e !important
+        &:hover
+          background-color: #093119 !important
+      &-secondary
+        &:hover
+          background-color: #2A2A2A !important
+
+    .leaf, .dropzone
+      background-color: $white
+      border-color: #444 !important
+    .leaf
+      &:hover
+        background-color: $dirtywhite
+
+    input, .form-control, .custom-select, label
+      background-color: $white
+      color: $text
+      border-color: $lightgrey
+    
+    .mapping-endpoint-wrapper
+      input 
+        border: 1px solid $lightgrey
+
+    .overlay-modal 
+      .content-container 
+        .content
+          border-color: $lightgrey
+
+    .fancy-button-simple, .fancy-button-simple-secondary, .fancy-button-simple-danger, .app-sidebar nav#mapping .sidebar-link .fancy-button-simple-danger
+      .icon 
+        &:hover
+          background-color: $dirtywhite
+          border-color: $white
+
+    samp
+      code
+        color: $text !important
+    
+    .pipeline-overview
+      .unit-graph
+        .unit, .settings .button-wrapper, .settings, .add-unit-before
+          background-color: $white !important
+          border-color: $dirtywhite !important
+    .pipeline-main
+      .header
+        background-color: darken($white, 2)
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        border-color: $white !important

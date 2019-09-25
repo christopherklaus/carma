@@ -1,0 +1,13 @@
+$max-width: 40vw
+.global-alert
+  position: fixed
+  top: 15px
+  left: calc((100vw - #{$max-width}) / 2)
+  display: flex
+  justify-content: center
+  z-index: 2000
+  width: $max-width
+  .alert
+    min-width: 300px
+    max-width: $max-width
+    opacity: .9

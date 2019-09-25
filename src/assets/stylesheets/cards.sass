@@ -1,0 +1,55 @@
+.card.tab-group
+  border: none
+  background-color: transparent
+  .loading-animation
+    @for $i from 1 through 10
+      &:nth-child(#{$i})
+        +onload-fadeIn(calc(#{$i} - 1), $transition)
+  & > .card-header
+    background-color: transparent
+    border-bottom-color: transparent
+    padding: 0 10px 10px 10px
+    & > .nav-pills
+      margin-bottom: -12px
+      .nav-link
+        padding: 2px 5px
+        margin-right: 8px
+        background-color: transparent
+        a
+          color: lighten($darkgrey, 20)
+          &:after
+            display: block
+            content: attr(title)
+            font-weight: bold
+            height: 1px
+            color: transparent
+            overflow: hidden
+            visibility: hidden
+        &.active
+          a
+            color: $darkgrey
+            font-weight: bold
+  & > .card-body
+    border: 1px solid $bordergrey
+    background-color: $white
+    border-radius: 6px
+    position: relative
+    margin-top: .5em
+    padding: 1.25em
+    box-shadow: $box-shadow-high
+
+.card.tab-group.no-border
+  border: none
+  box-shadow: none
+  & > .card-header
+    border-bottom: none
+  & > .card-body
+    border: none !important
+    position: relative
+    & > .list-group, & > div > .list-group
+      & > .list-group-item
+        padding: 1em 0
+        border-radius: 0
+        border: 1px solid $bordergrey
+        &.list-group-item-action
+          padding: 12px

@@ -1,0 +1,29 @@
+@import 'variables'
+@import 'animations'
+.overlay-modal
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background: rgba(white, .4)
+  z-index: 2000
+  overflow-y: scroll
+  animation: fadeIn .2s
+  .content-container
+    animation: fadeInMenu .8s
+    margin: 9% auto 40px auto
+    width: 40vw
+    min-width: 500px
+    min-height: 10vh
+    border-radius: 6px
+    box-shadow: $box-shadow-high
+    padding: 20px
+    border: 1px solid $bordergrey
+    background-color: $white
+    .content
+      padding: 20px 0
+
+.endpoint-creation
+  .endpoint_group_selection.disabled
+    display: none
